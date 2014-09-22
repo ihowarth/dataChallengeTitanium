@@ -1,16 +1,57 @@
 // member = MemberPrototype.createNewMember( name , email , listOfFriends)
 // name   = NameDatabase.getRandomName();
 // email  = EmailGenerator.generateNewEmail( name );
-function createDataSet( dataSetParams ) {
+function getMember( listOfFriends ) {
+	var name = NameDatabase.getRandomName();
 	
-	/* Params structure ( rootMember.listOfFriends = )
+	return MemberPrototype.createNewMember(
+		name,
+		EmailGenerator.generateNewEmail( name ),
+	    listOfFriends || []
+	);
+};
+
+function getFriendsArray( amountOfFriends ) {
+	var friendsArray = [];
+	
+	for ( var i = 0; i < amountOfFriends.length; i++ ) {
+		if ( amountOfFriends[i] instanceof Array ) {
+			friendsArray.push(
+				getMember(
+					getFriendsArray(amountOfFriends[i])
+				)
+			);
+			
+		} else {
+			var friendsfriendsArray = [];
+			
+			for ( var x = 0; x < amountOfFriends[i]; x++ ) {
+				friendsfriendsArray.push(
+					getMember()
+				);
+			}
+			
+			friendsArray.push(
+				getMember(
+					friendsfriendsArray
+				)
+			);	
+		}
+	}
+	
+	return friendsArray;
+};
+
+
+function createDataSet( dataSetArray ) {
+	/* Array structure ( rootMember.listOfFriends = )
      * 
      * 
-     * each variable is a friend, the number of the variable is how many friends the friend has
-     * { number , number , number }
+     * each value is a friend, the number of the value is how many friends the friend has
+     * [ number , number , number ]
      * 
      * e.g.
-     * { 1 , 0 , 4 }
+     * [ 1 , 0 , 4 ]
      * 
      * This would mean the root has 3 friends:
      * Friend 1 has 1 friends
@@ -21,11 +62,11 @@ function createDataSet( dataSetParams ) {
      * 
      * More complex
      * 
-     * each object is still a friend, so the root has 2 friends, but now friend 1 has 3 friends, who also have friends
-     * { { number , number , number } , number }
+     * each Array is still a friend, so the root has 2 friends, but now friend 1 has 3 friends, who also have friends
+     * [ [ number , number , number ] , number ]
      * 
      * e.g.
-     * { { 5 , 0 , 2 } , 8 }
+     * [ [ 5 , 0 , 2 ] , 8 ]
      * 
      * This would mean that the root has 2 friends:
      * Friend 1 has 3 friends
@@ -40,10 +81,10 @@ function createDataSet( dataSetParams ) {
      * We need to go deeper
      * 
      * we can get as deep as we like with this structure, for example
-     * {{ number , number , number } , number , { number , {{ number } , { number , number }} }}
+     * [ [ number , number , number ] , number , [ number , [ number , [ number , number ]]] ]
      * 
      * e.g.
-     * { { 4 , 2 , 1 } , 0 , { 4 , { 12  , { 999 , 6 }}} }
+     * [[ 4 , 2 , 1 ] , 0 , [ 4 , [ 12  , [ 999 , 6 ]]] ]
      * 
      * Okay, here we go -
      * 
@@ -66,15 +107,11 @@ function createDataSet( dataSetParams ) {
      * Friends 3's second friend's second friend's second friend has 6 friends
      */
 	
-	var name = NameDatabase.getRandomName();
-	
-	var member = MemberPrototype.createNewMember(
-		name,
-		EmailGenerator.generateNewEmail( name ),
-	    []
+	var rootMember = getMember( 
+		getFriendsArray( dataSetArray )
 	);
 	
-	console.log( member );
+	return rootMember;
 };
 
 exports.createDataSet = createDataSet;
