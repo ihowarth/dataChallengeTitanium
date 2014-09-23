@@ -1,5 +1,19 @@
 <Alloy>
 	<Window id="mainWin">
-		
+		<ScrollView id="scrollContainer">
+			<View id="elementsContainer">
+				<TextField id="selectLevelTextField"/>
+				<Label id="printLevelsButton"/>
+				
+				<TextField id="searchEmailTextField"/>
+				<Label id="searchFriendByEmailButton"/>
+				
+				<TextField id="searchNamesTextField"/>
+				<Label id="searchExtendedFriendsByName"/>
+				
+				<TextField id="deleteEmailTextField"/>
+				<Label id="deleteFriendByEmailButton"/>
+			</View>
+		</ScrollView>
 	</Window>
 </Alloy>

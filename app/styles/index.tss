@@ -1,3 +1,65 @@
 "#mainWin" : {
 	backgroundColor : "#fff"
+},
+
+"#scrollContainer" : {
+	top 			: 20,
+	backgroundColor : "#eee"
+},
+
+"#elementsContainer" : {
+	width  : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	layout : "vertical"
+},
+
+
+"Label" : {
+	top				: 10,
+	width     		: Ti.UI.SIZE,
+	height    		: Ti.UI.SIZE,
+	textAlign 		: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	backgroundColor : "#007AFF"
+},
+
+"TextField" : {
+	top   		: 50,
+	width 		: 150,
+	borderWidth : 1,
+	clearOnEdit : true,
+	textAlign 	: Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+
+
+
+"#selectLevelTextField" : {
+	hintText     : "Enter level to print - 0 prints all",
+	keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD,
+},
+"#printLevelsButton" : {
+	text : "Print selected levels"
+},
+
+
+"#searchEmailTextField" : {
+	hintText : "Enter email"
+},
+"#searchFriendByEmailButton" : {
+	text : "Search friend by email"
+},
+
+
+"#searchNamesTextField" : {
+	hintText : "Enter name"
+},
+"#searchExtendedFriendsByName" : {
+	text : "Search 2nd to 4th level friends by name"
+},
+
+
+"#deleteEmailTextField" : {
+	hintText : "Enter email"
+},
+"#deleteFriendByEmailButton" : {
+	text : "Delete 1st level friend by email"
 }
