@@ -2,17 +2,22 @@
 	<Window id="mainWin">
 		<ScrollView id="scrollContainer">
 			<View id="elementsContainer">
-				<TextField id="selectLevelTextField"/>
-				<Label id="printLevelsButton"/>
+				<View id="horizonalContainer">
+					<Button id="printAllLevelsButton"/>
+					<Button id="createNewDataButton"/>
+				</View>
 				
-				<TextField id="searchEmailTextField"/>
-				<Label id="searchFriendByEmailButton"/>
+				<TextField id="printSelectedLevelTextField"/>
+				<Button id="printSelectedLevelButton"/>
 				
-				<TextField id="searchNamesTextField"/>
-				<Label id="searchExtendedFriendsByName"/>
+				<TextField id="searchFriendByEmailTextField"/>
+				<Button id="searchFriendByEmailButton"/>
 				
-				<TextField id="deleteEmailTextField"/>
-				<Label id="deleteFriendByEmailButton"/>
+				<TextField id="searchExtendedFriendsByNameTextField"/>
+				<Button id="searchExtendedFriendsByNameButton"/>
+				
+				<TextField id="deleteFriendByEmailTextField"/>
+				<Button id="deleteFriendByEmailButton"/>
 			</View>
 		</ScrollView>
 	</Window>

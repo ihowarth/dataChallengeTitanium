@@ -14,52 +14,68 @@
 },
 
 
-"Label" : {
+"Button" : {
 	top				: 10,
 	width     		: Ti.UI.SIZE,
 	height    		: Ti.UI.SIZE,
 	textAlign 		: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	backgroundColor : "#007AFF"
+	backgroundColor : "#007AFF",
+	color			: "#000"
 },
 
 "TextField" : {
-	top   		: 50,
-	width 		: 150,
-	borderWidth : 1,
-	clearOnEdit : true,
-	textAlign 	: Ti.UI.TEXT_ALIGNMENT_CENTER
+	top   		  : 50,
+	width 		  : 150,
+	borderWidth   : 1,
+	clearOnEdit   : true,
+	textAlign 	  : Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+
+
+"#horizonalContainer" : {
+	width  : Ti.UI.SIZE,
+	height : Ti.UI.SIZE,
+	layout : "horizontal"
+},
+
+"#printAllLevelsButton" : {
+	title : "Print data"
+},
+
+"#createNewDataButton" : {
+	left  : 50,
+	title : "Create new random data"	
 },
 
 
 
-"#selectLevelTextField" : {
-	hintText     : "Enter level to print - 0 prints all",
-	keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD,
+"#printSelectedLevelTextField" : {
+	hintText : "Enter number"
 },
-"#printLevelsButton" : {
-	text : "Print selected levels"
+"#printSelectedLevelButton" : {
+	title : "Print specific level (0 prints all)"
 },
 
 
-"#searchEmailTextField" : {
+"#searchFriendByEmailTextField" : {
 	hintText : "Enter email"
 },
 "#searchFriendByEmailButton" : {
-	text : "Search friend by email"
+	title : "Search friend by email"
 },
 
 
-"#searchNamesTextField" : {
+"#searchExtendedFriendsByNameTextField" : {
 	hintText : "Enter name"
 },
-"#searchExtendedFriendsByName" : {
-	text : "Search 2nd to 4th level friends by name"
+"#searchExtendedFriendsByNameButton" : {
+	title : "Search 2nd to 4th level friends by name"
 },
 
 
-"#deleteEmailTextField" : {
+"#deleteFriendByEmailTextField" : {
 	hintText : "Enter email"
 },
 "#deleteFriendByEmailButton" : {
-	text : "Delete 1st level friend by email"
+	title : "Delete 1st level friend by email"
 }

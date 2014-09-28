@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.geekkingcloud.linkedlistschallenge</id>
-    <name>Linked Lists Challenge</name>
+    <name>LinkedListsChallenge</name>
     <version>1.0</version>
     <publisher>itexicodeveloperi</publisher>
     <url>http://</url>
