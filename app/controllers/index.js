@@ -40,7 +40,12 @@ function addEventListeners() {
         // Reset the random amount each time, so it can be created properly again
         dataSetCreatorRandomAmount = 4;
         
-        rootMember = DataSetCreator.createDataSet( createRandomDataArray() );
+        // Place the new random data Array structure into a variable so I can print it before I use it to create new data
+        var newRandomDataArray = createRandomDataArray(); 
+        
+        console.log( "New random data structure: " + JSON.stringify( newRandomDataArray ));
+        
+        rootMember = DataSetCreator.createDataSet( newRandomDataArray );
     });
     
     
