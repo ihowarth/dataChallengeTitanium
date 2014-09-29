@@ -2,10 +2,14 @@
 	backgroundColor : "#fff"
 },
 
+
 "#scrollContainer" : {
-	top 			: 20,
 	backgroundColor : "#eee"
 },
+"#scrollContainer[platform=ios]" : {
+	top : 20
+}
+
 
 "#elementsContainer" : {
 	width  : Ti.UI.SIZE,
@@ -22,6 +26,13 @@
 	backgroundColor : "#007AFF",
 	color			: "#000"
 },
+"Button[platform=android]" : {
+	height : 30,
+	font   : {
+		fontSize : 10
+	}
+},
+
 
 "TextField" : {
 	top   		  : 50,
@@ -30,6 +41,12 @@
 	clearOnEdit   : true,
 	textAlign 	  : Ti.UI.TEXT_ALIGNMENT_CENTER
 },
+"TextField[platform=android]" : {
+	font : {
+		fontSize : 10
+	}
+},
+
 
 
 "#horizonalContainer" : {
